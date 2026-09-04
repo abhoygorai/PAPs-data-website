@@ -12,6 +12,7 @@ export function ApprovedPage() {
       loading={loading}
       error={error}
       onRefresh={refresh}
+      showUpdatedOn={false}
     />
   );
 }
