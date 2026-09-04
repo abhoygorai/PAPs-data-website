@@ -1,23 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
 
 :root {
-  --ink: #13251f;
-  --ink-soft: #3d524a;
-  --muted: #6b7f76;
-  --paper: #f3f6f4;
-  --surface: rgba(255, 255, 255, 0.82);
+  --ink: #111111;
+  --ink-soft: #2a2a2a;
+  --muted: #5c6570;
+  --paper: #f4f7fb;
+  --surface: rgba(255, 255, 255, 0.88);
   --surface-strong: #ffffff;
-  --line: rgba(19, 37, 31, 0.1);
-  --teal: #0f6b5c;
-  --teal-deep: #0a4d42;
-  --teal-soft: #d8efe9;
+  --line: rgba(0, 0, 0, 0.1);
+  --ecl-blue: #0077c8;
+  --ecl-blue-deep: #005a99;
+  --ecl-blue-soft: #d6ebf8;
+  --ecl-green: #00a651;
+  --ecl-green-soft: #d8f5e6;
   --warn: #9a6700;
   --warn-bg: #fff3d6;
   --danger: #9b2c2c;
   --danger-bg: #fde8e8;
-  --success: #1b6b3a;
+  --success: #008a44;
   --success-bg: #def7e7;
-  --shadow: 0 18px 50px rgba(19, 37, 31, 0.08);
+  --shadow: 0 18px 50px rgba(0, 70, 120, 0.1);
   --radius: 18px;
   --font-display: "Sora", "Segoe UI", sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", sans-serif;
@@ -71,7 +73,7 @@ a {
   width: min(70vw, 520px);
   height: min(70vw, 520px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(15, 107, 92, 0.18), transparent 68%);
+  background: radial-gradient(circle, rgba(0, 119, 200, 0.2), transparent 68%);
   filter: blur(10px);
   z-index: -2;
   animation: drift 18s ease-in-out infinite alternate;
@@ -85,7 +87,7 @@ a {
   width: min(55vw, 420px);
   height: min(55vw, 420px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(154, 103, 0, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 166, 81, 0.14), transparent 70%);
 }
 
 .bg-grid {
@@ -93,20 +95,20 @@ a {
   inset: 0;
   z-index: -3;
   background:
-    linear-gradient(180deg, #eef4f1 0%, #f7f9f8 45%, #eef2f0 100%),
+    linear-gradient(180deg, #eaf3fa 0%, #f7f9fb 45%, #eef5f1 100%),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 47px,
-      rgba(19, 37, 31, 0.025) 47px,
-      rgba(19, 37, 31, 0.025) 48px
+      rgba(0, 90, 153, 0.03) 47px,
+      rgba(0, 90, 153, 0.03) 48px
     ),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 47px,
-      rgba(19, 37, 31, 0.025) 47px,
-      rgba(19, 37, 31, 0.025) 48px
+      rgba(0, 90, 153, 0.03) 47px,
+      rgba(0, 90, 153, 0.03) 48px
     );
   background-blend-mode: normal, multiply, multiply;
 }
@@ -127,7 +129,7 @@ a {
   font-size: clamp(1.55rem, 4vw, 2.15rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--teal-deep);
+  color: var(--ecl-blue-deep);
 }
 
 .brand-tagline {
@@ -163,14 +165,14 @@ a {
 }
 
 .nav-link:hover {
-  color: var(--teal-deep);
-  background: rgba(15, 107, 92, 0.06);
+  color: var(--ecl-blue-deep);
+  background: rgba(0, 119, 200, 0.08);
 }
 
 .nav-link.is-active {
-  background: var(--teal);
+  background: var(--ecl-blue);
   color: #fff;
-  box-shadow: 0 8px 18px rgba(15, 107, 92, 0.25);
+  box-shadow: 0 8px 18px rgba(0, 119, 200, 0.28);
 }
 
 .site-main {
@@ -200,7 +202,7 @@ a {
   letter-spacing: 0.1em;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--teal);
+  color: var(--ecl-blue);
 }
 
 .page-header h1 {
@@ -257,8 +259,8 @@ a {
 }
 
 .search-field input:focus {
-  border-color: rgba(15, 107, 92, 0.45);
-  box-shadow: 0 0 0 3px rgba(15, 107, 92, 0.12);
+  border-color: rgba(0, 119, 200, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 119, 200, 0.14);
 }
 
 .result-count {
@@ -294,12 +296,12 @@ a {
 }
 
 .btn-secondary {
-  background: var(--teal-soft);
-  color: var(--teal-deep);
+  background: var(--ecl-blue-soft);
+  color: var(--ecl-blue-deep);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: #c6e8df;
+  background: #c5e2f5;
 }
 
 .state-banner {
@@ -331,8 +333,8 @@ a {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 3px solid rgba(15, 107, 92, 0.18);
-  border-top-color: var(--teal);
+  border: 3px solid rgba(0, 119, 200, 0.18);
+  border-top-color: var(--ecl-blue);
   animation: spin 0.75s linear infinite;
 }
 
@@ -375,33 +377,29 @@ a {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--line);
+  color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   white-space: nowrap;
 }
 
 .data-table th:nth-child(1) {
-  color: #0a4d42;
-  background: #d8efe9;
+  background: #005a99;
 }
 
 .data-table th:nth-child(2) {
-  color: #1e3a5f;
-  background: #dce8f5;
+  background: #0077c8;
 }
 
 .data-table th:nth-child(3) {
-  color: #6b4a12;
-  background: #f5ebd6;
+  background: #0090d8;
 }
 
 .data-table th:nth-child(4) {
-  color: #5a2d6e;
-  background: #eddcf5;
+  background: #00a651;
 }
 
 .data-table th:nth-child(5) {
-  color: #7a2e1f;
-  background: #f5ddd6;
+  background: #111111;
 }
 
 .data-table td {
@@ -414,7 +412,7 @@ a {
 }
 
 .data-table tbody tr:hover {
-  background: #f7fbf9;
+  background: #eef6fc;
 }
 
 .cell-primary {
@@ -438,16 +436,16 @@ a {
   justify-content: center;
   min-height: 3.25rem;
   padding: 0.75rem 1rem;
-  background: linear-gradient(90deg, #0a4d42 0%, #0f6b5c 50%, #146b5a 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 -8px 24px rgba(10, 77, 66, 0.28);
+  background: linear-gradient(90deg, #005a99 0%, #0077c8 55%, #00a651 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 -8px 24px rgba(0, 90, 153, 0.28);
 }
 
 .footer-credit {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .footer-link {
@@ -462,7 +460,7 @@ a {
 }
 
 .footer-link:hover {
-  color: #b8fff0;
+  color: #d8f5e6;
 }
 
 .sr-only {
