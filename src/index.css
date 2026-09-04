@@ -600,8 +600,19 @@ a {
     word-break: break-word;
   }
 
-  .footer-link {
+  .site-footer {
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .footer-credit {
+    text-align: left;
     font-size: 0.85rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
   }
 }
 
