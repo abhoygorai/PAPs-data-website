@@ -8,6 +8,7 @@ type EmploymentListProps = {
   loading: boolean;
   error: string;
   onRefresh: () => void;
+  showUpdatedOn?: boolean;
 };
 
 export function EmploymentList({
@@ -17,6 +18,7 @@ export function EmploymentList({
   loading,
   error,
   onRefresh,
+  showUpdatedOn = true,
 }: EmploymentListProps) {
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
@@ -25,13 +27,12 @@ export function EmploymentList({
     const q = deferredQuery.trim().toLowerCase();
     if (!q) return records;
 
-    return records.filter((r) =>
-      [r.candidateName, r.fatherName, r.projectName, r.status, r.updatedOn]
-        .join(" ")
-        .toLowerCase()
-        .includes(q),
-    );
-  }, [records, deferredQuery]);
+    return records.filter((r) => {
+      const fields = [r.candidateName, r.fatherName, r.projectName, r.status];
+      if (showUpdatedOn) fields.push(r.updatedOn);
+      return fields.join(" ").toLowerCase().includes(q);
+    });
+  }, [records, deferredQuery, showUpdatedOn]);
 
   return (
     <section className="page-panel">
@@ -116,7 +117,7 @@ export function EmploymentList({
                 <th>Name of father</th>
                 <th>Project name</th>
                 <th>Present status of the file</th>
-                <th>Updated on date</th>
+                {showUpdatedOn && <th>Updated on date</th>}
               </tr>
             </thead>
             <tbody>
@@ -128,7 +129,9 @@ export function EmploymentList({
                   <td>{record.fatherName}</td>
                   <td>{record.projectName}</td>
                   <td>{record.status}</td>
-                  <td className="cell-muted">{record.updatedOn}</td>
+                  {showUpdatedOn && (
+                    <td className="cell-muted">{record.updatedOn}</td>
+                  )}
                 </tr>
               ))}
             </tbody>
